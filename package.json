@@ -1,0 +1,20 @@
+{
+  "name": "generator",
+  "version": "0.0.1",
+  "description": "Create boilerplate components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hieu Pham",
+  "license": "ISC",
+  "bin": {
+    "generator": "./index.js"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "commander": "^2.11.0",
+    "custom-template-generator": "^0.1.1",
+    "lodash": "^4.17.4"
+  }
+}
