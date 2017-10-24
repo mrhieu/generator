@@ -1,28 +1,29 @@
 #!/usr/bin/env node
 
-console.log('Hello Generator! 23423');
+console.log('Generator created by a lazy guy. You are at:', process.cwd());
 
 var generator = require('custom-template-generator');
 var program = require('commander');
-
-// var name = 'button';
-// var dest = 'src/app/shared/components';
 
 program
   .arguments('<name> [dest]')
   .action(function (name, dest) {
     main(name, dest);
-  });
+  })
+  .parse(process.argv);
 
 function main(name, dest) {
-  console.log('hey', name, dest);
+  var name = name || 'dumb';
+  var dest = dest || 'src/app/shared/components';
+
+  dest = process.cwd() + '/' + dest.replace(/^\//i, '');
 
   generator({
     componentName: name, // <-- as {name}
     customTemplatesUrl: './templates/',
     dest: dest,
     templateName: 'component', // <-- folder under ./templates/
-    autoIndent: true,
+    autoIndent: false,
     data: {}
   });
 }
