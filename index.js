@@ -3,7 +3,6 @@
 console.log('Hello Generator! 23423');
 
 var generator = require('custom-template-generator');
-var _ = require('lodash');
 var program = require('commander');
 
 // var name = 'button';
@@ -17,7 +16,6 @@ program
 
 function main(name, dest) {
   console.log('hey', name, dest);
-  name = _.startCase(name);
 
   generator({
     componentName: name, // <-- as {name}

@@ -3,11 +3,11 @@
 */
 
 import './{name}.sass';
-import {name}Ctrl from './{name}.ctrl';
+import {Name}Ctrl from './{name}.ctrl';
 
 export default {
   bindings: {},
   template: require('./{name}.html'),
-  controller: {name}Ctrl,
+  controller: {Name}Ctrl,
   controllerAs: '$ctrl'
 }

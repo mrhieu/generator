@@ -14,7 +14,6 @@
   "devDependencies": {},
   "dependencies": {
     "commander": "^2.11.0",
-    "custom-template-generator": "^0.1.1",
-    "lodash": "^4.17.4"
+    "custom-template-generator": "^0.1.1"
   }
 }
