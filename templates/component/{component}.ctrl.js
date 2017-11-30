@@ -6,6 +6,7 @@ class {Name}Ctrl {
   constructor() {
     'ngInject';
 
+    this.name = '{Name}';
   }
 
   $onInit() {
