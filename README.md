@@ -4,17 +4,21 @@ $ npm install -g
 $ npm link
 ```
 
-Usage: `$ generator <name> [dest]`
+Usage: `$ generator <type> <name> [dest]`
 
 
   Options:
 
     -h, --help  output usage information
 
+    type  'component' or 'directive'
+
+    name  should be in camelCase
+
     dest  by default it is `src/app/shared/components/`
 
 ### Example
 ```
-$ generator datePick
+$ generator component datePick
 ```
 This will create `src/app/shared/components/datePick` folder
