@@ -1,5 +1,5 @@
 {
-  "name": "generator",
+  "name": "lazy-generator",
   "version": "0.0.1",
   "description": "Create boilerplate components",
   "main": "index.js",
