@@ -1,4 +1,11 @@
 ## Get up and running
+
+```
+$ npm install -g lazy-generator
+```
+
+Or clone this project to your local then run
+
 ```
 $ npm install -g
 $ npm link
@@ -21,4 +28,4 @@ Usage: `$ generator <type> <name> [dest]`
 ```
 $ generator component datePick
 ```
-This will create `src/app/shared/components/datePick` folder
+This will create a new folder `src/app/shared/components/datePick`
