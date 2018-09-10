@@ -1,19 +1,20 @@
 {
   "name": "lazy-generator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Create boilerplate components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hieu Pham",
-  "license": "ISC",
+  "license": "MIT",
   "bin": {
     "generator": "./index.js"
   },
   "devDependencies": {},
   "dependencies": {
     "commander": "^2.11.0",
-    "custom-template-generator": "^0.1.1"
+    "custom-template-generator": "^0.1.1",
+    "lodash": "^4.17.10"
   }
 }

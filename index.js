@@ -4,6 +4,7 @@ console.log('Generator created by a lazy guy. You are at:', process.cwd());
 
 var generator = require('custom-template-generator');
 var program = require('commander');
+var _ = require('lodash');
 
 program
   .arguments('<type> <name> [dest]')
@@ -16,6 +17,9 @@ function main(type, name, dest) {
   var type = type || 'component'; // supported types: 'directive' - 'component'
   var name = name || 'dummy';
   var dest = dest || `src/app/shared/${type}s`;
+
+  // If detected, convert dashed case to camelCase
+  name = _.camelCase(name);
 
   dest = process.cwd() + '/' + dest.replace(/^\//i, '');
 
