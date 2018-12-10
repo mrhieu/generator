@@ -1,10 +1,11 @@
 {
   "name": "lazy-generator",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Create boilerplate components",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Hieu Pham",
   "license": "MIT",
