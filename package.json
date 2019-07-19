@@ -1,6 +1,6 @@
 {
   "name": "lazy-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create boilerplate components",
   "main": "index.js",
   "scripts": {

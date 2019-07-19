@@ -6,6 +6,7 @@ var _ = require('lodash');
 
 var TYPES = ['directive', 'component', 'reactComponent'];
 var DEST_PATH_DEFAULT = 'src/app/shared';
+var DEST_PATH_REACT_DEFAULT = 'src/app/dashboard';
 
 function copyTemplates(type, name, dest) {
   generator({
@@ -32,7 +33,12 @@ function generatorStart(type, name, dest) {
   }
 
   if (dest == null) {
-    dest = `${DEST_PATH_DEFAULT}/${type}s`;
+    if (type === 'reactComponent') {
+      dest = `${DEST_PATH_REACT_DEFAULT}/${type}s`;
+    } else {
+      dest = `${DEST_PATH_DEFAULT}/${type}s`;
+    }
+
     console.log('\x1b[45m%s\x1b[0m', `WARNING: no -dest- given. Will use "${dest}"`);
   }
 
