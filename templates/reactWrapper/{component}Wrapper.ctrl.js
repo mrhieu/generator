@@ -5,7 +5,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import store from '../../../steps/reactRedux/store';
+import store from '../../../dashboard/reactRedux/store';
 import {Name} from '../../reactComponents/{name}/{name}';
 
 class {Name}WrapperCtrl {
