@@ -33,10 +33,10 @@ $ generator <type> <name> [dest]
 
 ## Example
 
-### Angular Component
+### AngularJS Component
 
 ```
-$ generator component datePick
+$ generator angularjs component datePick
 ```
 
 This will create a new folder `src/app/shared/components/datePick`
@@ -44,7 +44,7 @@ This will create a new folder `src/app/shared/components/datePick`
 ### React Component
 
 ```
-$ generator reactComponent demoThisThat
+$ generator react component demoThisThat
 ```
 
 This will create this folder structure
@@ -66,4 +66,9 @@ To use the component in the View
 ```
   ...
   <demo-this-that-wrapper></demo-this-that-wrapper>
+```
+
+### Ionic React Component
+```
+$ generator ionicReact component demoThisThat
 ```

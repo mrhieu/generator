@@ -1,8 +1,8 @@
 {
   "name": "lazy-generator",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Create boilerplate components",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
@@ -10,7 +10,7 @@
   "author": "Hieu Pham",
   "license": "MIT",
   "bin": {
-    "generator": "./index.js"
+    "generator": "./src/index.js"
   },
   "devDependencies": {},
   "dependencies": {
