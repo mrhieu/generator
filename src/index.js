@@ -4,22 +4,27 @@ var generator = require('custom-template-generator');
 var program = require('commander');
 var _ = require('lodash');
 
-var FRAMEWORKS = ['angularjs', 'react', 'ionicReact'];
-var TYPES = ['component', 'directive'];
-var DEST_PATH_DEFAULT = {
-  angularjs: 'src/app/shared',
-  react: 'src/app/shared',
-  ionicReact: 'src'
-};
+var FRAMEWORKS = {
+  angularjs: {
+    types: ['component', 'directive', 'react'],
+    defaultPath: 'src/app/shared',
+    defaultPathReactComponents: 'src/app/dashboard/reactComponents',
+    defaultPathReactWrappers: 'src/app/shared/reactWrappers',
+  },
+  ionicReact: {
+    types: ['component'],
+    defaultPath: 'src/components'
+  }
+}
 
 function copyTemplateFiles(framework, type, name, dest) {
   console.log('LOG:::', framework, type, name, dest); // eslint-disable-line
 
   generator({
     componentName: name, // <-- as {name}
-    customTemplatesUrl: './templates/',
+    customTemplatesUrl: './src/templates/',
     dest: dest,
-    templateName: type, // <-- folder under ./templates/
+    templateName: `${framework}/${type}`, // <-- folder under ./templates/
     autoIndent: false,
     data: {
       kebabCase: _.kebabCase(name)
@@ -28,11 +33,11 @@ function copyTemplateFiles(framework, type, name, dest) {
 }
 
 function start(framework, type, name, dest) {
-  if (FRAMEWORKS.indexOf(framework) < 0) {
+  if (Object.keys(FRAMEWORKS).indexOf(framework) < 0) {
     return console.log('\x1b[45m%s\x1b[0m', 'ERROR: Invalid -framework-');
   }
 
-  if (TYPES.indexOf(type) < 0) {
+  if (FRAMEWORKS[framework].types.indexOf(type) < 0) {
     return console.log('\x1b[45m%s\x1b[0m', 'ERROR: Invalid -type-');
   }
 
@@ -40,10 +45,12 @@ function start(framework, type, name, dest) {
     return console.log('\x1b[45m%s\x1b[0m', 'ERROR: Invalid -name-');
   } else {
     name = _.camelCase(name);
+    if (framework === 'ionicReact') name = _.upperFirst(name);
   }
 
   if (dest == null) {
-    dest = `${DEST_PATH_DEFAULT[framework]}/${type}s`;
+    dest = `${FRAMEWORKS[framework].defaultPath}`;
+    if (framework === 'angularjs' && type === 'react') dest = `${FRAMEWORKS[framework].defaultPathReactComponents}`;
     console.log('\x1b[45m%s\x1b[0m', `WARNING: no -dest- given. Will use "${dest}"`);
   }
 
@@ -52,9 +59,9 @@ function start(framework, type, name, dest) {
 
   // Only for React: we are actually adding a react component in an angularjs project
   // Need one more step
-  if (framework === 'react' && type === 'component') {
-    var dest2 = process.cwd() + '/' + `${DEST_PATH_DEFAULT[framework]}/reactWrappers`.replace(/^\//i, '');
+  if (framework === 'angularjs' && type === 'react') {
     var type2 = 'reactWrapper';
+    var dest2 = process.cwd() + '/' + `${FRAMEWORKS[framework].defaultPathReactWrappers}`.replace(/^\//i, '');
     copyTemplateFiles(framework, type2, name, dest2);
   }
 }
@@ -73,7 +80,4 @@ function main() {
 /**
  * ========= Main ============
  */
-// main();
-var dest = 'src/test';
-dest = process.cwd() + '/' + dest.replace(/^\//i, '')
-copyTemplateFiles('ionicReact', 'component', 'hieuTest', dest);
+main();
