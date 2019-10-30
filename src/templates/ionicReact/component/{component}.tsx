@@ -1,7 +1,9 @@
 import React from 'react';
 import {
-  IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar
+  IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonButtons,
+  IonButton, IonBackButton, IonIcon
 } from '@ionic/react';
+import { more } from 'ionicons/icons';
 import './{Name}.scss';
 
 const {Name}: React.FC<{}> = () => {
@@ -10,12 +12,20 @@ const {Name}: React.FC<{}> = () => {
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Tab Two</IonTitle>
+            <IonButtons slot="start">
+              <IonBackButton />
+            </IonButtons>
+            <IonTitle>{Name}</IonTitle>
+            <IonButtons slot="end">
+              <IonButton>
+                <IonIcon slot="icon-only" icon={{more}} mode="ios" />
+              </IonButton>
+            </IonButtons>
           </IonToolbar>
         </IonHeader>
         <IonContent>
           <IonList>
-            <IonItem routerLink="/tab2/details">
+            <IonItem routerLink="/some/where">
               <IonLabel>
                 <h2>Go to detail</h2>
               </IonLabel>
