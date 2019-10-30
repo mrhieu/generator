@@ -25,7 +25,7 @@ class {Name}WrapperCtrl {
     this.reactRender();// Whatever the services that react might need, pass them here
 
     // Must manually unmount component for `componentWillUnmount` to be triggered
-    this.$scope.$on("$destroy", () => {
+    this.$scope.$on('$destroy', () => {
       unmountComponentAtNode(this.wrapperElement);
     });
   }

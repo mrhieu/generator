@@ -12,8 +12,9 @@ var FRAMEWORKS = {
     defaultPathReactWrappers: 'src/app/shared/reactWrappers',
   },
   ionicReact: {
-    types: ['component'],
-    defaultPath: 'src/components'
+    types: ['component', 'page'],
+    defaultPath: 'src/components',
+    defaultPathPage: 'src/pages',
   }
 }
 
@@ -51,6 +52,7 @@ function start(framework, type, name, dest) {
   if (dest == null) {
     dest = `${FRAMEWORKS[framework].defaultPath}`;
     if (framework === 'angularjs' && type === 'react') dest = `${FRAMEWORKS[framework].defaultPathReactComponents}`;
+    if (framework === 'ionicReact' && type === 'page') dest = `${FRAMEWORKS[framework].defaultPathPage}`;
     console.log('\x1b[45m%s\x1b[0m', `WARNING: no -dest- given. Will use "${dest}"`);
   }
 
