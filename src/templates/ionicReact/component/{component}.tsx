@@ -2,14 +2,13 @@ import React from 'react';
 import {
   IonItem, IonLabel,
 } from '@ionic/react';
-import { more } from 'ionicons/icons';
 import './{Name}.scss';
 
 type Props = {
   isThat?: boolean,
 }
 
-const {Name}: React.FC<Props> = (props) => {
+const {Name}: React.FC<Props> = () => {
   return (
     <div className="{kebabCase}">
       <IonItem>
