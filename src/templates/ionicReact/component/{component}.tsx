@@ -1,40 +1,28 @@
 import React from 'react';
 import {
-  IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar, IonButtons,
-  IonButton, IonBackButton, IonIcon
+  IonItem, IonLabel,
 } from '@ionic/react';
 import { more } from 'ionicons/icons';
 import './{Name}.scss';
 
-const {Name}: React.FC<{}> = () => {
+type Props = {
+  isThat?: boolean,
+}
+
+const {Name}: React.FC<Props> = (props) => {
   return (
     <div className="{kebabCase}">
-      <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton />
-            </IonButtons>
-            <IonTitle>{Name}</IonTitle>
-            <IonButtons slot="end">
-              <IonButton>
-                <IonIcon slot="icon-only" icon={{more}} mode="ios" />
-              </IonButton>
-            </IonButtons>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent>
-          <IonList>
-            <IonItem routerLink="/some/where">
-              <IonLabel>
-                <h2>Go to detail</h2>
-              </IonLabel>
-            </IonItem>
-          </IonList>
-        </IonContent>
-      </IonPage>
+      <IonItem>
+        <IonLabel>
+          <h2>Component: {Name}</h2>
+        </IonLabel>
+      </IonItem>
     </div>
   );
 };
+
+{Name}.defaultProps = {
+  isThat: true,
+}
 
 export default {Name};
