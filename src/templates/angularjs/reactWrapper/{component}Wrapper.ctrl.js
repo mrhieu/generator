@@ -8,15 +8,16 @@ import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from '../../../dashboard/reactRedux/store';
-import {Name} from '../../reactComponents/{name}/{name}';
+import {Name} from '../../../dashboard/reactComponents/{name}/{name}';
 
 class {Name}WrapperCtrl {
   wrapperElement: HTMLElement;
 
-  constructor($scope) {
+  constructor($scope, $element) {
     'ngInject';
 
     this.$scope = $scope;
+    this.$element = $element;
 
     this.name = '{Name}Wrapper';
   }
@@ -31,7 +32,7 @@ class {Name}WrapperCtrl {
   }
 
   reactRender() {
-    this.wrapperElement = document.getElementById('{kebabCase}-wrapper');
+    this.wrapperElement = angular.element(this.$element)[0];
 
     if (this.wrapperElement) {
       render(

@@ -10,7 +10,7 @@ import {Name}WrapperCtrl from './{name}Wrapper.ctrl';
 
 export default {
   bindings: {},
-  template: '<div id="{kebabCase}-wrapper"></div>',// I suggest that we add the suffix `-wrapper` for react component's mounting point
+  template: '<div></div>',
   controller: {Name}WrapperCtrl,
   controllerAs: '$ctrl'
 }
