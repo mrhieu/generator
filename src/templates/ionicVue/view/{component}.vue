@@ -1,7 +1,7 @@
 <template>
   <ion-page className="{kebabCase}-page">
     <IonContent>
-      <h2>My Page</h2>
+      <h2>{Name} Page</h2>
     </IonContent>
   </ion-page>
 </template>

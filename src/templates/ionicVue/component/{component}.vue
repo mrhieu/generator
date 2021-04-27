@@ -1,6 +1,6 @@
 <template>
   <div className="{kebabCase}">
-    <h2>My Component</h2>
+    <h2>{Name} Component</h2>
   </div>
 </template>
 

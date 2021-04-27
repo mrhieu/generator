@@ -51,13 +51,14 @@ function start(framework, type, name, dest) {
     return console.log('\x1b[45m%s\x1b[0m', 'ERROR: Invalid -name-');
   } else {
     name = _.camelCase(name);
-    if (framework === 'ionicReact') name = _.upperFirst(name);
+    if (['ionicReact', 'ionicVue'].includes(framework)) name = _.upperFirst(name);
   }
 
   if (dest == null) {
     dest = `${FRAMEWORKS[framework].defaultPath}`;
     if (framework === 'angularjs' && type === 'react') dest = `${FRAMEWORKS[framework].defaultPathReactComponents}`;
     if (framework === 'ionicReact' && type === 'page') dest = `${FRAMEWORKS[framework].defaultPathPage}`;
+    if (framework === 'ionicVue' && type === 'view') dest = `${FRAMEWORKS[framework].defaultPathPage}`;
     console.log('\x1b[45m%s\x1b[0m', `WARNING: no -dest- given. Will use "${dest}"`);
   }
 

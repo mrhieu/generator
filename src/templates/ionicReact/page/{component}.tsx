@@ -15,7 +15,7 @@ const {Name}: React.FC<Props> = () => {
   return (
     <IonPage className="{kebabCase}-page">
       <IonContent>
-        <h2>My Page</h2>
+        <h2>{Name} Page</h2>
       </IonContent>
     </IonPage>
   );
