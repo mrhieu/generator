@@ -15,6 +15,11 @@ var FRAMEWORKS = {
     types: ['component', 'page'],
     defaultPath: 'src/components',
     defaultPathPage: 'src/pages',
+  },
+  ionicVue: {
+    types: ['component', 'view'],
+    defaultPath: 'src/components',
+    defaultPathPage: 'src/views',
   }
 }
 

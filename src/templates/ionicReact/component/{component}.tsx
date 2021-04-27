@@ -13,7 +13,9 @@ type Props = {
 
 const {Name}: React.FC<Props> = () => {
   return (
-    <h2>My Component</h2>
+    <div className="{kebabCase}">
+      <h2>My Component</h2>
+    </div>
   );
 };
 

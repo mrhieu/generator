@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  IonPage
+  IonPage, IonContent,
 } from '@ionic/react';
 import {
 
@@ -13,8 +13,10 @@ type Props = {
 
 const {Name}: React.FC<Props> = () => {
   return (
-    <IonPage>
-      <h2>My Component</h2>
+    <IonPage className="{kebabCase}-page">
+      <IonContent>
+        <h2>My Page</h2>
+      </IonContent>
     </IonPage>
   );
 };
