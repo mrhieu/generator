@@ -1,14 +1,14 @@
 <template>
-  <ion-page className="{kebabCase}-page">
+  <IonPage className="ion-page {kebabCase}-page">
     <IonContent>
       <h2>{Name} Page</h2>
     </IonContent>
-  </ion-page>
+  </IonPage>
 </template>
 
 <script lang="ts">
 import {
-  IonPage,
+  IonPage, IonContent,
 } from '@ionic/vue';
 import {
 
@@ -18,7 +18,7 @@ import './{Name}.scss';
 export default  {
   name: '{Name}',
   components: {
-    IonPage,
+    IonPage, IonContent,
   },
   setup() {
     return {

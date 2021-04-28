@@ -13,7 +13,7 @@ type Props = {
 
 const {Name}: React.FC<Props> = () => {
   return (
-    <IonPage className="{kebabCase}-page">
+    <IonPage className="ion-page {kebabCase}-page">
       <IonContent>
         <h2>{Name} Page</h2>
       </IonContent>
