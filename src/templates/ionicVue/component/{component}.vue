@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue';
 import {
 
 } from '@ionic/vue';
@@ -13,7 +14,7 @@ import {
 } from 'ionicons/icons';
 import './{Name}.scss';
 
-export default {
+export default defineComponent({
   name: '{Name}',
   props: {
 
@@ -26,5 +27,5 @@ export default {
 
     }
   }
-}
+})
 </script>
